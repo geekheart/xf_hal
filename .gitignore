@@ -1,0 +1,5 @@
+build/
+.vscode/
+.xmake/
+temp
+xf_utils/
