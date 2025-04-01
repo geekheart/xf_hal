@@ -1,12 +1,12 @@
 /**
  * @file xf_hal_spi.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2025-04-01
- * 
+ *
  * @copyright Copyright (c) 2025, CorAL. All rights reserved.
- * 
+ *
  */
 
 #ifndef __XF_HAL_SPI_H__
@@ -45,9 +45,9 @@ xf_err_t xf_spi_deinit(xf_spi_num_t spi_num);
 xf_err_t xf_spi_enable(xf_spi_num_t spi_num);
 xf_err_t xf_spi_disable(xf_spi_num_t spi_num);
 
-int xf_hal_spi_write(xf_spi_num_t spi_num, const uint8_t *buffer, uint32_t size);
-int xf_hal_spi_read(xf_spi_num_t spi_num, uint8_t *buffer, uint32_t size);
-
+int xf_spi_write(xf_spi_num_t spi_num, const uint8_t *buffer, uint32_t size);
+int xf_spi_read(xf_spi_num_t spi_num, uint8_t *buffer, uint32_t size);
+int xf_spi_read_write(xf_spi_num_t spi_num, const uint8_t *write_buffer, uint8_t *read_buffer, uint32_t size);
 
 /* ==================== [Macros] ============================================ */
 

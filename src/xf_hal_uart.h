@@ -30,16 +30,16 @@ typedef uint32_t xf_uart_num_t;
 
 /* ==================== [Global Prototypes] ================================= */
 
-xf_err_t xf_hal_uart_init(xf_uart_num_t uart_num, uint32_t baudrate);
-xf_err_t xf_hal_uart_deinit(xf_uart_num_t uart_num);
+xf_err_t xf_uart_init(xf_uart_num_t uart_num, uint32_t baudrate);
+xf_err_t xf_uart_deinit(xf_uart_num_t uart_num);
 
-xf_err_t xf_hal_uart_set_baudrate(xf_uart_num_t uart_num, uint32_t baudrate);
+xf_err_t xf_uart_set_baudrate(xf_uart_num_t uart_num, uint32_t baudrate);
 
-xf_err_t xf_hal_uart_enable(xf_uart_num_t uart_num);
-xf_err_t xf_hal_uart_disable(xf_uart_num_t uart_num);
+xf_err_t xf_uart_enable(xf_uart_num_t uart_num);
+xf_err_t xf_uart_disable(xf_uart_num_t uart_num);
 
-xf_err_t xf_hal_uart_write(xf_uart_num_t uart_num, uint8_t *data, uint32_t len);
-xf_err_t xf_hal_uart_read(xf_uart_num_t uart_num, uint8_t *data, uint32_t len);
+xf_err_t xf_uart_write(xf_uart_num_t uart_num, uint8_t *data, uint32_t len);
+xf_err_t xf_uart_read(xf_uart_num_t uart_num, uint8_t *data, uint32_t len);
 
 /* ==================== [Macros] ============================================ */
 
