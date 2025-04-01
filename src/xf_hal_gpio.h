@@ -28,7 +28,7 @@ extern "C" {
 
 typedef uint32_t xf_gpio_num_t;
 
-typedef void (*xf_gpio_irq_cb_t)(xf_gpio_num_t gpio_num, void *user_data);
+typedef void (*xf_gpio_cb_t)(xf_gpio_num_t gpio_num);
 
 typedef enum _xf_gpio_dir_t {
     _XF_GPIO_DIR_BASE = 0,
@@ -58,12 +58,11 @@ typedef enum _xf_gpio_intr_type_t {
 xf_err_t xf_gpio_init(xf_gpio_num_t gpio_num, xf_gpio_dir_t direction);
 xf_err_t xf_gpio_deinit(xf_gpio_num_t gpio_num);
 
-xf_err_t xf_gpio_set_dir(xf_gpio_num_t gpio_num, xf_gpio_dir_t direction);
 xf_err_t xf_gpio_set_intr_type(xf_gpio_num_t gpio_num, xf_gpio_intr_type_t intr_type);
-xf_err_t xf_gpio_set_intr_cb(xf_gpio_num_t gpio_num, xf_gpio_irq_cb_t callback, void *user_data);
+xf_err_t xf_gpio_set_intr_cb(xf_gpio_cb_t callback);
 
-xf_err_t xf_gpio_enable(xf_gpio_num_t gpio_num);
-xf_err_t xf_gpio_disable(xf_gpio_num_t gpio_num);
+xf_err_t xf_gpio_intr_enable(xf_gpio_num_t gpio_num);
+xf_err_t xf_gpio_intr_disable(xf_gpio_num_t gpio_num);
 
 xf_err_t xf_gpio_set_level(xf_gpio_num_t gpio_num, bool level);
 bool xf_gpio_get_level(xf_gpio_num_t gpio_num);

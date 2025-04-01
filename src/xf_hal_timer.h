@@ -28,14 +28,14 @@ extern "C" {
 
 typedef uint32_t xf_tim_num_t;
 
-typedef void (*xf_tim_cb_t)(xf_tim_num_t tim_num, void *user_data);
+typedef void (*xf_tim_cb_t)(xf_tim_num_t tim_num);
 
 /* ==================== [Global Prototypes] ================================= */
 
 xf_err_t xf_tim_init(xf_tim_num_t tim_num, uint32_t tick_freq_hz);
 xf_err_t xf_tim_deinit(xf_tim_num_t tim_num);
 
-xf_err_t xf_tim_set_cb(xf_tim_num_t tim_num, xf_tim_cb_t callback, void *user_data);
+xf_err_t xf_tim_set_intr_cb(xf_tim_cb_t callback);
 
 xf_err_t xf_tim_enable(xf_tim_num_t tim_num);
 xf_err_t xf_tim_disable(xf_tim_num_t tim_num);

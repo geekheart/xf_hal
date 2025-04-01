@@ -49,7 +49,8 @@ xf_err_t xf_i2c_disable(xf_i2c_num_t i2c_num);
 
 int xf_i2c_write(xf_i2c_num_t i2c_num, const uint8_t *buffer, uint32_t size);
 int xf_i2c_read(xf_i2c_num_t i2c_num, uint8_t *buffer, uint32_t size);
-
+int xf_i2c_write_mem(xf_i2c_num_t i2c_num, uint8_t mem, uint8_t *buffer, uint32_t size);
+int xf_i2c_read_mem(xf_i2c_num_t i2c_num, uint8_t mem, uint8_t *buffer, uint32_t size);
 
 /* ==================== [Macros] ============================================ */
 
