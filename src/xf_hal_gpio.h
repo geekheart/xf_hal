@@ -30,35 +30,26 @@ typedef uint32_t xf_gpio_num_t;
 
 typedef void (*xf_gpio_cb_t)(xf_gpio_num_t gpio_num);
 
-typedef enum _xf_gpio_dir_t {
-    _XF_GPIO_DIR_BASE = 0,
+typedef enum _xf_gpio_mode_t {
+    _XF_GPIO_MODE_BASE = 0,
 
-    XF_GPIO_DIR_IN_FLOATING = _XF_GPIO_DIR_BASE,
-    XF_GPIO_DIR_IN_PULL_UP,
-    XF_GPIO_DIR_IN_PULL_DOWN,
-    XF_GPIO_DIR_OUT,
-    XF_GPIO_DIR_OUT_OD,
+    XF_GPIO_MODE_IN_FLOATING = _XF_GPIO_MODE_BASE,
+    XF_GPIO_MODE_IN_PULL_UP,
+    XF_GPIO_MODE_IN_PULL_DOWN,
+    XF_GPIO_MODE_OUT,
+    XF_GPIO_MODE_OUT_OD,
+    XF_GPIO_MODE_INTR_RISING,
+    XF_GPIO_MODE_INTR_FALLING,
+    XF_GPIO_MODE_INTR_ANY,
 
-    _XF_GPIO_DIR_MAX
-} xf_gpio_dir_t;
-
-typedef enum _xf_gpio_intr_type_t {
-    _XF_GPIO_INTR_BASE = 0,     /*!< 基础类型 */
-
-    XF_GPIO_INTR_TYPE_DISABLE = _XF_GPIO_INTR_BASE, /*!< 禁用中断 */
-    XF_GPIO_INTR_TYPE_RISING,   /*!< 上升沿中断 */
-    XF_GPIO_INTR_TYPE_FALLING,  /*!< 下降沿中断 */
-    XF_GPIO_INTR_TYPE_ANY,      /*!< 双边沿中断 */
-
-    _XF_GPIO_INTR_TYPE_MAX,     /*!< 中断类型最大值 */
-} xf_gpio_intr_type_t;
+    _XF_GPIO_MODE_MAX
+} xf_gpio_mode_t;
 
 /* ==================== [Global Prototypes] ================================= */
 
-xf_err_t xf_gpio_init(xf_gpio_num_t gpio_num, xf_gpio_dir_t direction);
+xf_err_t xf_gpio_init(xf_gpio_num_t gpio_num, xf_gpio_mode_t mode);
 xf_err_t xf_gpio_deinit(xf_gpio_num_t gpio_num);
 
-xf_err_t xf_gpio_set_intr_type(xf_gpio_num_t gpio_num, xf_gpio_intr_type_t intr_type);
 xf_err_t xf_gpio_set_intr_cb(xf_gpio_cb_t callback);
 
 xf_err_t xf_gpio_intr_enable(xf_gpio_num_t gpio_num);
